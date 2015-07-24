@@ -1,5 +1,8 @@
 # file: mysql/defaults/main.yml
 
+# Role control
+mysql_backup: no
+
 # Basic settings
 mysql_port: 3306
 mysql_bind_address: "0.0.0.0"
