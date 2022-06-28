@@ -1,9 +1,17 @@
 # file: mysql/tasks/main.yml
 
 - include: install.yml
+  when: (do_install is not defined or do_install) and (mysql_do_install is not defined or mysql_do_install)
+
 - include: configure.yml
+  when: (do_install is not defined or do_install) and (mysql_do_configure is not defined or mysql_do_configure)
+
 - include: secure.yml
+  when: (do_install is not defined or do_install) and (mysql_do_secure is not defined or mysql_do_secure)
+
 - include: databases.yml
+
 - include: users.yml
+
 - include: monit.yml
   when: monit_protection is defined and monit_protection == true
