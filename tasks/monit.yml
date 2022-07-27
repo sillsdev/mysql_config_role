@@ -4,3 +4,4 @@
   template:
     src: etc_monit_conf.d_mysql.j2
     dest: /etc/monit/conf.d/mysql
+    mode: '0700'

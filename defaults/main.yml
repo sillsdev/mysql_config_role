@@ -1,7 +1,7 @@
 # file: mysql/defaults/main.yml
 
 # Role control
-mysql_backup: no
+mysql_backup: false
 
 # Basic settings
 mysql_port: 3306

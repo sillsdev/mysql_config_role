@@ -1,15 +1,16 @@
 # file: mysql/tasks/install.yml
 
 - name: Echo ansible_os_family
-  debug: msg="Ansible OS family = {{ ansible_os_family | lower }}"
+  debug:
+    msg: "Ansible OS family = {{ ansible_os_family | lower }}"
 
 - name: MySQL | Load the os specific variables
-  include_vars: "{{ansible_os_family | lower}}.yml"
+  include_vars: "{{ ansible_os_family | lower }}.yml"
 
 - name: MySQL | Make sure the MySql packages are installed
   apt:
     pkg: "{{ mysql_packages }}"
-    update_cache: yes
+    update_cache: true
 
 - name: MySQL | Ensure MySQL is running
   service:
