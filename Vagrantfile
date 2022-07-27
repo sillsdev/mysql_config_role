@@ -3,8 +3,8 @@
 
 Vagrant.configure('2') do |config|
   config.vm.define 'anxs' do |c|
-    c.vm.box = 'ubuntu/trusty64'
-    c.vm.network :private_network, ip: '192.168.88.15'
+    c.vm.box = 'ubuntu/jammy64'
+    c.vm.network "private_network", ip: '192.168.56.15'
     c.vm.hostname = 'anxs.local'
     c.vm.provision 'ansible' do |ansible|
       ansible.playbook = 'test.yml'
