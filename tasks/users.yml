@@ -12,3 +12,4 @@
     state: present
   loop: "{{ mysql_users }}"
   when: mysql_users|length > 0
+  no_log: true
