@@ -1,7 +1,8 @@
 # file: mysql/tasks/databases.yml
 
 - name: Echo database names to create
-  debug: msg="mysql_databases = {{ mysql_databases }}"
+  debug: 
+    msg: "mysql_databases = {{ mysql_databases }}"
 
 - name: MySQL | Make sure the MySQL databases are present
   mysql_db:
